@@ -56,5 +56,4 @@ graphify-out/*
 .graphifyignore
 # Keep useful project graph files
 !graphify-out/GRAPH_REPORT.md
-!graphify-out/graph.html
 !graphify-out/graph.json
