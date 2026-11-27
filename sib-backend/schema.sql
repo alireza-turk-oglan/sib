@@ -3,6 +3,7 @@ SET NAMES utf8mb4;
 CREATE TABLE IF NOT EXISTS users (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   phone CHAR(11) NOT NULL UNIQUE,
+  full_name VARCHAR(100) NULL,
   status ENUM('active','blocked') NOT NULL DEFAULT 'active',
   created_at DATETIME NOT NULL,
   last_login_at DATETIME NULL,
@@ -140,3 +141,6 @@ CREATE TABLE IF NOT EXISTS rate_limits (
   hits INT UNSIGNED NOT NULL,
   window_start INT UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- نسخه ساختار دیتابیس (برای مهاجرت خودکار نسخه‌های قدیمی؛ کد: migrate_if_needed در app/core.php)
+INSERT INTO settings(k, v, updated_at) VALUES('schema_version', '2', UTC_TIMESTAMP()) ON DUPLICATE KEY UPDATE v = '2';
