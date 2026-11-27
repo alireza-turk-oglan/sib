@@ -3,6 +3,7 @@
 *.log
 *.pyc
 *.swp
+*.bat
 .DS_Store
 .atom/
 .build/
@@ -36,6 +37,7 @@ migrate_working_dir/
 /tests_sql/
 /docs/
 README1.md
+
 
 # Symbolication related
 app.*.symbols
