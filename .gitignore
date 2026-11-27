@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 /coverage/
 /test/
+/tests_sql/
 /docs/
 README1.md
 
