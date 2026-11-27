@@ -1,0 +1,134 @@
+<!-- @format -->
+
+# ==============================
+# Miscellaneous
+# ==============================
+
+*.class
+*.log
+*.pyc
+*.pyo
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.cache
+.DS_Store
+Thumbs.db
+desktop.ini
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ==============================
+# IDE / IntelliJ
+# ==============================
+
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code: ignore workspace cache, keep project settings if useful
+.vscode/.history/
+.vscode/*.log
+
+# ==============================
+# Flutter / Dart / Pub
+# ==============================
+
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+
+# ==============================
+# Flutter generated / ephemeral
+# ==============================
+
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+macos/Flutter/ephemeral/
+
+# ==============================
+# Android build artifacts
+# ==============================
+
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# ==============================
+# iOS dependencies / artifacts
+# ==============================
+
+ios/Pods/
+ios/build/
+
+# ==============================
+# Generated files
+# ==============================
+
+*.symbols
+*.map.json
+*.g.dart
+*.freezed.dart
+
+# ==============================
+# Dependencies / vendored code
+# ==============================
+
+node_modules/
+vendor/
+Pods/
+
+# ==============================
+# Media / binary / large assets (exclude from code graph)
+# ==============================
+
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.bmp
+*.ico
+*.svg
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.eot
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.ogg
+*.pdf
+*.zip
+*.7z
+*.rar
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# ==============================
+# Graphify output
+# ==============================
+
+graphify-out/
