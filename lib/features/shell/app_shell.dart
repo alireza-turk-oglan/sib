@@ -129,7 +129,7 @@ class _Banner extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         color: color.withAlpha(30),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-        child: Row(children: [Icon(icon, size: 18, color: color), const SizedBox(width: 8), Expanded(child: Text(text, style: TextStyle(color: color, fontWeight: FontWeight.w600, fontSize: 13))), if (action != null) action!]),
+        child: Row(children: [Icon(icon, size: 18, color: color), const SizedBox(width: 8), Expanded(child: Text(text, style: TextStyle(color: color, fontWeight: FontWeight.w600, fontSize: 13))), ?action]),
       );
 }
 
@@ -152,7 +152,7 @@ class _RailBrand extends StatelessWidget {
         height: size,
         fit: BoxFit.contain,
         gaplessPlayback: true,
-        errorBuilder: (_, __, ___) => SizedBox(width: size, height: size, child: Center(child: fallback)),
+        errorBuilder: (_, _, _) => SizedBox(width: size, height: size, child: Center(child: fallback)),
       ),
     );
   }

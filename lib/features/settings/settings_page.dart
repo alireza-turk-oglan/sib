@@ -156,7 +156,7 @@ class _SettingsPageState extends State<SettingsPage> {
               clipBehavior: Clip.antiAlias,
               child: app.profile.logo == null
                   ? Icon(Icons.image_outlined, color: AppColors.muted(context), size: 30)
-                  : Image.memory(app.profile.logo!, fit: BoxFit.contain, gaplessPlayback: true, errorBuilder: (_, __, ___) => const Icon(Icons.broken_image_outlined)),
+                  : Image.memory(app.profile.logo!, fit: BoxFit.contain, gaplessPlayback: true, errorBuilder: (_, _, _) => const Icon(Icons.broken_image_outlined)),
             ),
             const SizedBox(width: 14),
             Expanded(

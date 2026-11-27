@@ -1,134 +1,151 @@
 <!-- @format -->
 
-# ==============================
-# Miscellaneous
-# ==============================
+# =========================================================
 
-*.class
-*.log
-*.pyc
-*.pyo
-*.swp
-*.swo
-*.tmp
-*.temp
-*.bak
-*.old
-*.orig
-*.cache
-.DS_Store
-Thumbs.db
-desktop.ini
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+# SIB - Graphify Ignore Rules
 
-# ==============================
-# IDE / IntelliJ
-# ==============================
+# Keep source code, architecture, logic, tests and documentation.
 
-*.iml
-*.ipr
-*.iws
-.idea/
+# Ignore generated files, binaries, assets and Graphify outputs.
 
-# VS Code: ignore workspace cache, keep project settings if useful
-.vscode/.history/
-.vscode/*.log
+# =========================================================
 
-# ==============================
-# Flutter / Dart / Pub
-# ==============================
+# -------------------------
 
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.pub-cache/
-.pub/
-build/
-coverage/
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Graphify output & cache
 
-# ==============================
-# Flutter generated / ephemeral
-# ==============================
+# -------------------------
 
-windows/flutter/ephemeral/
+graphify-out/ .graphifyignore graphifyignore
+
+# -------------------------
+
+# Flutter generated files
+
+# -------------------------
+
+.dart_tool/ .flutter-plugins .flutter-plugins-dependencies .packages build/ .flutter/ .pub-cache/
+
+# -------------------------
+
+# IDE & workspace
+
+# -------------------------
+
+.idea/ .vscode/ _.iml _.ipr \*.iws .DS_Store Thumbs.db
+
+# -------------------------
+
+# Logs & temporary files
+
+# -------------------------
+
+_.log _.tmp _.temp _.bak _.old _.orig _.swp _.swo \*.cache
+
+# -------------------------
+
+_.ttf _.otf _.woff _.woff2 _.eot _.ico _.icns _.dll _.exe _.pdb _.lib _.exp \*.dat
+
+# Images & media
+
+_.png _.jpg _.jpeg _.gif _.webp _.bmp _.svg _.mp4 _.mov _.mp3 \*.wav
+
+# -------------------------
+
+# Flutter platform generated
+
+# -------------------------
+
+windows/flutter/ephemeral/ windows/flutter/generated_plugins.cmake windows/flutter/generated_plugin_registrant.\* windows/flutter/flutter_export.h windows/flutter/flutter_messenger.h windows/flutter/flutter_plugin_registrar.h windows/flutter/flutter_texture_registrar.h
+
+# -------------------------
+
+# Android generated
+
+# -------------------------
+
+android/.gradle/ android/captures/ android/local.properties android/\*\*/build/
+
+# -------------------------
+
+# iOS generated
+
+# -------------------------
+
+ios/Pods/ ios/.symlinks/ ios/Flutter/Flutter.framework/ ios/Flutter/Flutter.podspec
+
+# -------------------------
+
+# macOS generated
+
+# -------------------------
+
+macos/Pods/ macos/Flutter/ephemeral/
+
+# -------------------------
+
+# Linux generated
+
+# -------------------------
+
 linux/flutter/ephemeral/
-macos/Flutter/ephemeral/
 
-# ==============================
-# Android build artifacts
-# ==============================
+# -------------------------
 
-android/.gradle/
-android/app/debug/
-android/app/profile/
-android/app/release/
+# Web generated
 
-# ==============================
-# iOS dependencies / artifacts
-# ==============================
+# -------------------------
 
-ios/Pods/
-ios/build/
+web/build/
 
-# ==============================
-# Generated files
-# ==============================
+# -------------------------
 
-*.symbols
-*.map.json
-*.g.dart
-*.freezed.dart
+# Environment & secrets
 
-# ==============================
-# Dependencies / vendored code
-# ==============================
+# -------------------------
 
-node_modules/
-vendor/
-Pods/
+.env .env._ env/dev.json **/secrets.json **/credentials.json \*\*/private_key_ **/\*.pem **/\*.key pubspec.lock
 
-# ==============================
-# Media / binary / large assets (exclude from code graph)
-# ==============================
+# -------------------------
 
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.gif
-*.bmp
-*.ico
-*.svg
-*.ttf
-*.otf
-*.woff
-*.woff2
-*.eot
-*.mp4
-*.mov
-*.mp3
-*.wav
-*.ogg
-*.pdf
-*.zip
-*.7z
-*.rar
-*.exe
-*.dll
-*.so
-*.dylib
-*.bin
+# PHP dependencies & runtime
 
-# ==============================
-# Graphify output
-# ==============================
+# -------------------------
 
-graphify-out/
+sib-backend/vendor/ sib-backend/storage/logs/ sib-backend/storage/cache/ sib-backend/storage/sessions/ sib-backend/storage/tmp/ sib-backend/storage/\*.log
+
+# -------------------------
+
+# Python generated
+
+# -------------------------
+
+**pycache**/ _.pyc _.pyo .venv/ venv/ .pytest_cache/
+
+# -------------------------
+
+# Node generated
+
+# -------------------------
+
+node_modules/ npm-debug.log* yarn-debug.log* yarn-error.log\*
+
+# -------------------------
+
+# Test output & coverage
+
+# -------------------------
+
+coverage/ htmlcov/ \*.lcov
+
+# -------------------------
+
+# Backup files
+
+# -------------------------
+
+backup/ backups/ _.zip _.7z _.rar _.tar \*.gz
+
+# Binary files & assets
+
+assets/ docs/ scripts/ test/ tests_sql/ windows/
