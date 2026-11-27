@@ -4,9 +4,14 @@
 - cluster-only mode — file stats not available
 
 ## Summary
-- 1740 nodes · 2409 edges · 89 communities (77 shown, 12 thin omitted)
+- 1753 nodes · 2426 edges · 88 communities (77 shown, 11 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 128 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `b2826e56`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Data Models
@@ -72,7 +77,7 @@
 - Parties Repository
 - HTTP Client
 - Windows C++ Runner
-- Payments Repository
+- PHP API Router
 - Main App Entry
 - Time Period Utilities
 - Flutter Window Controller
@@ -93,7 +98,6 @@
 - Version Constants
 - Invoice Editor State
 - Reports Page State
-- Accounting Logic
 
 ## God Nodes (most connected - your core abstractions)
 1. `Win32Window` - 27 edges
@@ -108,21 +112,21 @@
 10. `e()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `{closure#1}()` --calls--> `e()`  [INFERRED]
-  sib-backend/public/install.php → sib-backend/app/core.php
 - `{closure#2}()` --calls--> `val()`  [INFERRED]
   sib-backend/public/admin.php → sib-backend/app/core.php
 - `FlutterWindow::OnCreate()` --calls--> `RegisterPlugins()`  [INFERRED]
   windows/runner/flutter_window.cpp → windows/flutter/generated_plugin_registrant.cc
 - `{closure#4}()` --calls--> `csrf_field()`  [INFERRED]
   sib-backend/public/admin.php → sib-backend/app/core.php
+- `auth_page()` --calls--> `csrf_field()`  [INFERRED]
+  sib-backend/public/index.php → sib-backend/app/core.php
 - `bad()` --calls--> `e()`  [INFERRED]
   sib-backend/public/admin.php → sib-backend/app/core.php
 
 ## Import Cycles
 - None detected.
 
-## Communities (89 total, 12 thin omitted)
+## Communities (88 total, 11 thin omitted)
 
 ### Community 0 - "Data Models"
 Cohesion: 0.03
@@ -142,51 +146,51 @@ Nodes (48): addMonths, back, d, day, days, from, fromDate, fromIso (+40 more)
 
 ### Community 4 - "Cryptography and Buffers"
 Cohesion: 0.04
-Nodes (44): b, buildXlsx, c, cd, central, chars, cleaned, colLetter (+36 more)
+Nodes (35): bd, bitLen, buf, h, k, m, map, padLen (+27 more)
 
 ### Community 5 - "Excel Export Utility"
-Cohesion: 0.05
-Nodes (39): build, busy, _content, createState, credit, customers, _Def, _defs (+31 more)
+Cohesion: 0.04
+Nodes (44): b, buildXlsx, c, cd, central, chars, cleaned, colLetter (+36 more)
 
 ### Community 6 - "Report Grid UI"
 Cohesion: 0.05
-Nodes (37): a, _arDigits, b, d, dt, enDigits, _faDigits, fmtJalali (+29 more)
+Nodes (39): build, busy, _content, createState, credit, customers, _Def, _defs (+31 more)
 
 ### Community 7 - "Date Formatting"
 Cohesion: 0.05
-Nodes (34): discount, itemId, kMaxPrice, kMaxQty, lineGross, LineInput, lineTotal, null (+26 more)
+Nodes (37): a, _arDigits, b, d, dt, enDigits, _faDigits, fmtJalali (+29 more)
 
 ### Community 8 - "API Constants"
 Cohesion: 0.05
-Nodes (36): Item, _active, _add, build, _buy, _categoryId, _cats, _code (+28 more)
+Nodes (36): ApiErrorCodes, ApiHeaders, ApiPaths, authorization, badCode, badPhone, bearer, blocked (+28 more)
 
 ### Community 9 - "Invoice Calculations"
-Cohesion: 0.06
-Nodes (26): bd, bitLen, buf, h, k, m, map, padLen (+18 more)
+Cohesion: 0.05
+Nodes (34): discount, itemId, kMaxPrice, kMaxQty, lineGross, LineInput, lineTotal, null (+26 more)
 
 ### Community 10 - "Item Management UI"
-Cohesion: 0.06
-Nodes (29): actions, build, child, color, confirmDialog, confirmLabel, cs, danger (+21 more)
+Cohesion: 0.05
+Nodes (37): Item, _active, _add, build, _buy, _categoryId, _cats, _code (+29 more)
 
 ### Community 11 - "Common UI Components"
 Cohesion: 0.06
-Nodes (34): dependencies, cupertino_icons, file_picker, flutter, flutter_localizations, flutter_secure_storage, http, logger (+26 more)
+Nodes (32): build, _c, _cell, _chip, _chooseYear, clearable, createState, current (+24 more)
 
 ### Community 12 - "Project Dependencies"
 Cohesion: 0.06
-Nodes (30): build, _c, _cell, _chip, _chooseYear, clearable, createState, current (+22 more)
+Nodes (29): actions, build, child, color, confirmDialog, confirmLabel, cs, danger (+21 more)
 
 ### Community 13 - "App Configuration"
 Cohesion: 0.06
-Nodes (25): allowInsecureHttp, apiBaseUrl, AppConfig, connectTimeoutSeconds, endpoint, environment, isDev, receiveTimeoutSeconds (+17 more)
+Nodes (34): dependencies, cupertino_icons, file_picker, flutter, flutter_localizations, flutter_secure_storage, http, logger (+26 more)
 
 ### Community 14 - "Club Management Page"
-Cohesion: 0.07
-Nodes (28): batchId, consent, db, errors, failed, _fatal, label, maxLength (+20 more)
+Cohesion: 0.06
+Nodes (25): allowInsecureHttp, apiBaseUrl, AppConfig, connectTimeoutSeconds, endpoint, environment, isDev, receiveTimeoutSeconds (+17 more)
 
 ### Community 15 - "SMS Service"
-Cohesion: 0.10
-Nodes (20): csrf_field(), csrf_token(), e(), redir(), clean_full_name(), user_by_phone(), user_display_name(), bad() (+12 more)
+Cohesion: 0.07
+Nodes (28): batchId, consent, db, errors, failed, _fatal, label, maxLength (+20 more)
 
 ### Community 16 - "Jalali Date Picker"
 Cohesion: 0.07
@@ -210,11 +214,11 @@ Nodes (27): boldRows, cashIn, cashOut, chart, ChartSeries, cogs, ColType, column
 
 ### Community 21 - "Report Models"
 Cohesion: 0.07
-Nodes (26): ApiErrorCodes, ApiHeaders, ApiPaths, authorization, badCode, badPhone, bearer, blocked (+18 more)
+Nodes (26): app, appVersion, counts, createdAt, db, dbSha256, dbSize, formatVersion (+18 more)
 
 ### Community 22 - "App Navigation Shell"
-Cohesion: 0.07
-Nodes (26): app, appVersion, counts, createdAt, db, dbSha256, dbSize, formatVersion (+18 more)
+Cohesion: 0.10
+Nodes (14): csrf_field(), csrf_token(), e(), bad(), {closure#1}(), {closure#2}(), {closure#4}(), flash_get() (+6 more)
 
 ### Community 23 - "Backup Metadata"
 Cohesion: 0.08
@@ -237,8 +241,8 @@ Cohesion: 0.08
 Nodes (21): _allocate, balances, balancesView, balKind, build, createState, _delete, direction (+13 more)
 
 ### Community 28 - "Auth Pages"
-Cohesion: 0.08
-Nodes (21): build, _busy, _CenterCard, child, _code, _codeStep, createState, dispose (+13 more)
+Cohesion: 0.21
+Nodes (22): add_days(), client_ip(), db(), insert_id(), migrate_if_needed(), now(), q(), quota_take() (+14 more)
 
 ### Community 29 - "Backup Service"
 Cohesion: 0.09
@@ -254,35 +258,35 @@ Nodes (20): build, changed, createState, false, initState, _invoiceList, invoice
 
 ### Community 32 - "API Response Models"
 Cohesion: 0.09
-Nodes (22): app, AppInfo, AuthResult, body, code, daysLeft, downloadUrl, endsAt (+14 more)
+Nodes (20): build, _busy, child, _code, _codeStep, createState, dispose, _error (+12 more)
 
 ### Community 33 - "PHP Core Utilities"
+Cohesion: 0.09
+Nodes (22): app, AppInfo, AuthResult, body, code, daysLeft, downloadUrl, endsAt (+14 more)
+
+### Community 34 - "PHP Database Layer"
 Cohesion: 0.10
 Nodes (19): _address, build, _card, checking, createState, dispose, _footer, initState (+11 more)
 
-### Community 34 - "PHP Database Layer"
+### Community 35 - "Party Form UI"
 Cohesion: 0.15
 Nodes (17): base_path(), en_to_fa(), enc(), fa_to_en(), g2j(), is_https(), jdate(), money() (+9 more)
-
-### Community 35 - "Party Form UI"
-Cohesion: 0.22
-Nodes (19): add_days(), client_ip(), db(), insert_id(), migrate_if_needed(), now(), q(), quota_take() (+11 more)
 
 ### Community 36 - "Dialog State Management"
 Cohesion: 0.11
 Nodes (18): Party, _active, build, _code, _consent, createState, _desc, dispose (+10 more)
 
 ### Community 37 - "Settings Page"
-Cohesion: 0.10
-Nodes (19): AppCard, AppDialog, DropdownField, EmptyState, PageHeader, SectionTitle, StatCard, StatusChip (+11 more)
+Cohesion: 0.11
+Nodes (13): build, createState, CustomersPage, _CustomersPageState, _delete, dispose, initState, kind (+5 more)
 
 ### Community 38 - "UI Design System"
 Cohesion: 0.27
 Nodes (17): app_log(), cfg(), dec(), http_post_json(), setting(), gateway_active(), gateways_enabled(), ippanel_send() (+9 more)
 
 ### Community 39 - "PHP SMS Gateways"
-Cohesion: 0.12
-Nodes (13): build, createState, CustomersPage, _CustomersPageState, _delete, dispose, initState, kind (+5 more)
+Cohesion: 0.11
+Nodes (17): AppCard, AppDialog, DropdownField, EmptyState, PageHeader, SectionTitle, StatCard, StatusChip (+9 more)
 
 ### Community 40 - "Customer Management Page"
 Cohesion: 0.12
@@ -294,31 +298,31 @@ Nodes (16): _SearchPicker, _SearchPickerState, LoginPage, _LoginPageState, ClubP
 
 ### Community 42 - "Chart Visualization"
 Cohesion: 0.12
-Nodes (13): _AccountDialog, _AccountDialogState, avatarInitial, build, checking, createState, _logout, _refresh (+5 more)
-
-### Community 43 - "Win32 Window Management"
-Cohesion: 0.12
 Nodes (14): BarChartView, _BarPainter, build, colors, data, fontFamily, gridColor, height (+6 more)
 
-### Community 44 - "App Lifecycle Controller"
+### Community 43 - "Win32 Window Management"
 Cohesion: 0.13
 Nodes (6): Win32Window::GetClientArea(), Win32Window::Show(), EnableNonClientDpiScaling, WindowClassRegistrar, class_registered_, instance_
 
-### Community 45 - "Dashboard Page"
+### Community 44 - "App Lifecycle Controller"
 Cohesion: 0.13
 Nodes (10): DashboardData, build, createState, d, DashboardPage, _DashboardPageState, initState, _load (+2 more)
 
-### Community 46 - "Business Profile Settings"
+### Community 45 - "Dashboard Page"
 Cohesion: 0.13
 Nodes (14): BackupPage, _BackupPageState, build, busy, _chooseFolder, _create, createState, files (+6 more)
 
-### Community 47 - "Items Repository"
+### Community 46 - "Business Profile Settings"
 Cohesion: 0.12
 Nodes (12): BusinessProfile, decodeLogo, displayName, empty, encodeLogo, fromSettings, hasLogo, logo (+4 more)
 
-### Community 48 - "Account Dialog"
+### Community 47 - "Items Repository"
 Cohesion: 0.12
 Nodes (15): addCategory, adjustStock, categories, create, db, delete, deleteCategory, ItemsRepo (+7 more)
+
+### Community 48 - "Account Dialog"
+Cohesion: 0.13
+Nodes (13): _AccountDialog, _AccountDialogState, avatarInitial, build, checking, createState, _logout, _refresh (+5 more)
 
 ### Community 49 - "Auth Service Client"
 Cohesion: 0.13
@@ -329,128 +333,128 @@ Cohesion: 0.13
 Nodes (9): _CloseHandler, controller, ensureInitialized, init, main, onWindowClose, options, setPreventClose (+1 more)
 
 ### Community 51 - "Backup Management UI"
+Cohesion: 0.13
+Nodes (7): AppController, app, AppContext, AppScope, of, read, svc
+
+### Community 52 - "Windows Native Entry"
 Cohesion: 0.18
 Nodes (4): wWinMain(), CreateAndAttachConsole(), GetCommandLineArguments(), Utf8FromUtf16()
 
-### Community 52 - "Windows Native Entry"
+### Community 53 - "Native Geometry Types"
 Cohesion: 0.14
 Nodes (8): Scale(), Point, x, y, Size, height, width, Win32Window::Win32Window()
 
-### Community 53 - "Native Geometry Types"
+### Community 54 - "Flutter Windows Host"
 Cohesion: 0.19
 Nodes (7): FlutterWindow::OnCreate(), Win32Window::Destroy(), Win32Window::OnCreate(), Win32Window, child_content_, quit_on_close_, window_handle_
 
-### Community 54 - "Flutter Windows Host"
-Cohesion: 0.15
-Nodes (6): app, AppContext, AppScope, of, read, svc
-
 ### Community 55 - "Search Picker Widget"
-Cohesion: 0.15
-Nodes (5): AccountingApp, build, AppController, controller, _Gate
+Cohesion: 0.22
+Nodes (12): admin_logs, admins, api_tokens, otp_codes, payments, plans, rate_limits, settings (+4 more)
 
 ### Community 56 - "SQL Test Suite"
-Cohesion: 0.15
-Nodes (10): AppPaths, autoBackupDir, dataDir, dbPath, defaultBackupDir, init, logsDir, prefsPath (+2 more)
-
-### Community 57 - "Secure Storage"
-Cohesion: 0.17
-Nodes (4): ApiClient, _client, close, post
-
-### Community 58 - "Preferences Store"
-Cohesion: 0.17
-Nodes (9): getBool, getString, load, _m, path, PrefsStore, _save, setBool (+1 more)
-
-### Community 59 - "Invoices Repository"
-Cohesion: 0.17
-Nodes (9): _assertStockOk, db, delete, InvoicesRepo, list, nextNumber, _qInvoiceById, save (+1 more)
-
-### Community 60 - "Parties Repository"
-Cohesion: 0.17
-Nodes (11): count, create, db, delete, linesOf, list, nextCode, PartiesRepo (+3 more)
-
-### Community 61 - "HTTP Client"
-Cohesion: 0.17
-Nodes (9): FileService, _firstPath, openPath, openUrl, pickBackupFile, pickDirectory, pickImage, saveBytes (+1 more)
-
-### Community 62 - "Windows C++ Runner"
 Cohesion: 0.17
 Nodes (9): clearToken, _kPhone, _kToken, _read, readPhone, readToken, _s, saveSession (+1 more)
 
-### Community 63 - "Payments Repository"
+### Community 57 - "Secure Storage"
+Cohesion: 0.17
+Nodes (9): getBool, getString, load, _m, path, PrefsStore, _save, setBool (+1 more)
+
+### Community 58 - "Preferences Store"
+Cohesion: 0.17
+Nodes (9): _assertStockOk, db, delete, InvoicesRepo, list, nextNumber, _qInvoiceById, save (+1 more)
+
+### Community 59 - "Invoices Repository"
+Cohesion: 0.17
+Nodes (11): count, create, db, delete, linesOf, list, nextCode, PartiesRepo (+3 more)
+
+### Community 60 - "Parties Repository"
+Cohesion: 0.18
+Nodes (4): ApiClient, _client, close, post
+
+### Community 61 - "HTTP Client"
+Cohesion: 0.18
+Nodes (4): AccountingApp, build, controller, _Gate
+
+### Community 62 - "Windows C++ Runner"
 Cohesion: 0.18
 Nodes (6): build, createLabel, createState, items, q, title
 
-### Community 65 - "Main App Entry"
+### Community 64 - "PHP API Router"
 Cohesion: 0.18
 Nodes (9): add, allocate, db, delete, listDetailed, of, openInvoicesOf, PaymentsRepo (+1 more)
 
-### Community 66 - "Time Period Utilities"
+### Community 65 - "Main App Entry"
 Cohesion: 0.33
 Nodes (9): sub_public(), app_info(), auth_or_fail(), {closure#1}(), device_id_of(), fail(), in_str(), inactive_error() (+1 more)
 
-### Community 67 - "Flutter Window Controller"
+### Community 66 - "Time Period Utilities"
 Cohesion: 0.20
 Nodes (7): Granularity, granularityLabel, j, key, label, PeriodKey, periodOf
 
-### Community 68 - "Windows Message Handling"
+### Community 67 - "Flutter Window Controller"
 Cohesion: 0.20
 Nodes (5): FlutterWindow::OnDestroy(), FlutterWindow, flutter_controller_, project_, Win32Window::OnDestroy()
 
-### Community 71 - "Device Identity"
+### Community 70 - "Settings Repository"
 Cohesion: 0.22
 Nodes (7): AppDatabase, allowNegativeStock, db, getBool, setBool, SettingsRepo, updateCostOnPurchase
 
-### Community 72 - "Logo Processing Service"
+### Community 71 - "Device Identity"
 Cohesion: 0.22
 Nodes (4): DeviceIdentity, _fallbackGuid, _id, name
 
-### Community 73 - "Windows Plugin Registry"
+### Community 72 - "Logo Processing Service"
 Cohesion: 0.22
 Nodes (4): LogoService, maxSide, maxSourceBytes, prepare
 
-### Community 75 - "SMS Repository"
+### Community 74 - "Report Table Widget"
 Cohesion: 0.22
 Nodes (6): build, _colWidth, _numeric, ReportGrid, table, ReportTable
 
-### Community 76 - "Logging System"
+### Community 75 - "SMS Repository"
 Cohesion: 0.22
 Nodes (6): db, failedCount, failedPartyIds, history, log, SmsRepo
 
-### Community 77 - "Backend Documentation"
+### Community 76 - "Logging System"
 Cohesion: 0.25
 Nodes (5): error, info, Log, prune, _write
 
-### Community 78 - "Build Configuration"
+### Community 77 - "Backend Documentation"
 Cohesion: 0.50
 Nodes (3): include, linter, rules
 
-### Community 79 - "Linter Rules"
+### Community 78 - "Build Configuration"
 Cohesion: 0.50
 Nodes (3): BackupFormatException, DomainError, ApiException
 
-### Community 82 - "Version Constants"
+### Community 79 - "Linter Rules"
+Cohesion: 0.50
+Nodes (4): redir(), user_display_name(), go(), need_login()
+
+### Community 81 - "Server Installation Script"
 Cohesion: 0.67
 Nodes (3): Windows CMake Configuration, Flutter CMake Configuration, Runner CMake Configuration
 
 ## Knowledge Gaps
 - **1142 isolated node(s):** `amount`, `balance`, `batchId`, `Category`, `categoryId` (+1137 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1324 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1330 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Win32Window` connect `Native Geometry Types` to `PHP API Router`, `Windows Message Handling`, `Settings Repository`, `App Lifecycle Controller`, `Windows Native Entry`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Why does `Win32Window` connect `Flutter Windows Host` to `Flutter Window Controller`, `Win32 Window Proc`, `Win32 Window Management`, `Native Geometry Types`, `Payments Repository`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **What connects `amount`, `balance`, `batchId` to the rest of the system?**
   _1142 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Data Models` be split into smaller, more focused modules?**
   _Cohesion score 0.03225806451612903 - nodes in this community are weakly interconnected._
-- **Why does `FlutterWindow` connect `Windows Message Handling` to `PHP API Router`, `Win32 Window Proc`, `Native Geometry Types`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `DateRange` connect `Invoice List View` to `Common UI Components`, `Party Detail View`, `Jalali Date Utilities`, `Report Grid UI`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Should `Core App Services` be split into smaller, more focused modules?**
   _Cohesion score 0.037037037037037035 - nodes in this community are weakly interconnected._
-- **Why does `DateRange` connect `Invoice List View` to `Party Detail View`, `Jalali Date Utilities`, `Project Dependencies`, `Excel Export Utility`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Why does `AppDatabase` connect `Settings Repository` to `PHP API Router`, `Core App Services`, `SMS Repository`, `Items Repository`, `PHP Auth Backend`, `Database Client`, `Preferences Store`, `Invoices Repository`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **Should `Invoice Editor UI` be split into smaller, more focused modules?**
   _Cohesion score 0.04 - nodes in this community are weakly interconnected._
