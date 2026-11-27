@@ -1,0 +1,12 @@
+Options -Indexes
+RewriteEngine On
+# هدر Authorization برای API
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteRule ^api/v1/(.+)$ api.php?r=$1 [QSA,L]
+RewriteRule ^admin(/.*)?$ admin.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+<FilesMatch "\.(sql|log|lock)$">
+  Require all denied
+</FilesMatch>
